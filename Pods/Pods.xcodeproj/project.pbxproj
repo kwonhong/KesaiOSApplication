@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03FE840FFB717385745A04C41BE30775 /* Pods-KesaApplication-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 68B33D4293ECB27D9ACD8191C1CA9087 /* Pods-KesaApplication-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27921DB2375DC459FA5B1981A447D996 /* Pods-KesaApplication-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B2B47CD339F9D8CE7C1380CEDDB642 /* Pods-KesaApplication-dummy.m */; };
+		535C11E9CFF05A98C17D56392E34C29B /* Pods-KesaApplicationTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D11361B6AC6DAEB37DCC3B05886286 /* Pods-KesaApplicationTests-dummy.m */; };
+		C2D8DE592465FCCC0B3A84FB95E4B3E9 /* Pods-KesaApplicationTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 13CA433A4A4B2BDD9DDC1B8CC99E4CDD /* Pods-KesaApplicationTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E35C6FC8B1AB661C213A0D567597CCCA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		E8701A1C134A3D109FA2B89536E4E6A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06B85C3A114C9E87BC9666EF491964CC /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		08C6CC023A58F24A387A6873EE769D50 /* Pods-KesaApplicationTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KesaApplicationTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		13CA433A4A4B2BDD9DDC1B8CC99E4CDD /* Pods-KesaApplicationTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KesaApplicationTests-umbrella.h"; sourceTree = "<group>"; };
+		3021240F567B3789E2D53F0B5877AE09 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		336B5FA62C43B44C37C87324932952E7 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
+		34CAF262BB71E7850041F47EF3260ED5 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		36810B4DD9D778A1A2838EFCF1C9AE5C /* Pods-KesaApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KesaApplication.release.xcconfig"; sourceTree = "<group>"; };
+		3F31E2FDADE5E99DF6DA7891EEAB3157 /* Pods-KesaApplicationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KesaApplicationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		40A2DE8E34C7FEA6818A15F07B7734D4 /* Pods-KesaApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KesaApplication.debug.xcconfig"; sourceTree = "<group>"; };
+		479708CD7335FD4A9F50BB7A6BD0BDA7 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
+		57D11361B6AC6DAEB37DCC3B05886286 /* Pods-KesaApplicationTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KesaApplicationTests-dummy.m"; sourceTree = "<group>"; };
+		58281EF1A72BC649D378B6806D8DADF7 /* Pods-KesaApplication.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KesaApplication.modulemap"; sourceTree = "<group>"; };
+		68B33D4293ECB27D9ACD8191C1CA9087 /* Pods-KesaApplication-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KesaApplication-umbrella.h"; sourceTree = "<group>"; };
+		68BDBF490988AEEFB8C53B561DAE512B /* Pods-KesaApplication-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KesaApplication-frameworks.sh"; sourceTree = "<group>"; };
+		703AA0CDC27A2089A356E4510D82DAC4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71C0B9DC2D55E692DF8C4877098C692D /* Pods-KesaApplication-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KesaApplication-acknowledgements.markdown"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94E4F17500394FC485EE7C06E1FD1FB4 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		96B2B47CD339F9D8CE7C1380CEDDB642 /* Pods-KesaApplication-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KesaApplication-dummy.m"; sourceTree = "<group>"; };
+		98BB44A16F79BEF584F971E949214C98 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		A12D5EC82D9F8BF65F1FFFA52D2A6F6D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5D5E772ACFA754FB6A6AB8C071D83E4 /* Pods-KesaApplication-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KesaApplication-acknowledgements.plist"; sourceTree = "<group>"; };
+		AF11577D1086BBD20AB1515F7B122A93 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		B9455AE4E5BBE37EC04C63470CCFEF84 /* Pods-KesaApplicationTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KesaApplicationTests-frameworks.sh"; sourceTree = "<group>"; };
+		BAACF37C70317B90DCE4FE3364FE21F0 /* Pods-KesaApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KesaApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
+		C1B704E4AE761AD16CBE241A3337882B /* Pods_KesaApplicationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KesaApplicationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D1DFE88EE7B4240001630BD1F1640CD8 /* Pods-KesaApplication-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KesaApplication-resources.sh"; sourceTree = "<group>"; };
+		E553A7EF3FB34805207AE443F886243A /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
+		E94A2947F52C9D34D2B091BE2CB53B1E /* Pods-KesaApplicationTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-KesaApplicationTests.modulemap"; sourceTree = "<group>"; };
+		ED475535F3D388D60EA6F858E6127A3E /* Pods_KesaApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KesaApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3C57B6A215BA5028897882D87C3CE64 /* Pods-KesaApplicationTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KesaApplicationTests-resources.sh"; sourceTree = "<group>"; };
+		F5AE0D776346690C527060B8C9CEEEB2 /* Pods-KesaApplicationTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KesaApplicationTests-acknowledgements.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64720EEC9E9A9A9A4BB6CF35F6B94479 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8701A1C134A3D109FA2B89536E4E6A4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACFF455FE710DFCE4AD1B653C7674CC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E35C6FC8B1AB661C213A0D567597CCCA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0467A09FD982402E503CCD5089004D0F /* GoogleSymbolUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				DC9015FE90790A9ECFD4771F6399FB10 /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		0A0ED0C1BEC13656473C5F7EF77B1B2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED475535F3D388D60EA6F858E6127A3E /* Pods_KesaApplication.framework */,
+				C1B704E4AE761AD16CBE241A3337882B /* Pods_KesaApplicationTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D56F9AC1A4F07F82EE7CF15E4E7F38A /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				415B6290126C8A308E806B08C50392C3 /* Pods-KesaApplication */,
+				31646FF04D6A6C348281A1C04F0CB5B0 /* Pods-KesaApplicationTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		1E84FFDB43ED9A1940A14279ED455F5F /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				8005B45B43DCF7744628D118CD5E2BA8 /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		2ABA8F7BA215458D27153D649766A73F /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				9E42C875269107D80E305CC832D7B5F8 /* Frameworks */,
+			);
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		31646FF04D6A6C348281A1C04F0CB5B0 /* Pods-KesaApplicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				703AA0CDC27A2089A356E4510D82DAC4 /* Info.plist */,
+				E94A2947F52C9D34D2B091BE2CB53B1E /* Pods-KesaApplicationTests.modulemap */,
+				08C6CC023A58F24A387A6873EE769D50 /* Pods-KesaApplicationTests-acknowledgements.markdown */,
+				F5AE0D776346690C527060B8C9CEEEB2 /* Pods-KesaApplicationTests-acknowledgements.plist */,
+				57D11361B6AC6DAEB37DCC3B05886286 /* Pods-KesaApplicationTests-dummy.m */,
+				B9455AE4E5BBE37EC04C63470CCFEF84 /* Pods-KesaApplicationTests-frameworks.sh */,
+				F3C57B6A215BA5028897882D87C3CE64 /* Pods-KesaApplicationTests-resources.sh */,
+				13CA433A4A4B2BDD9DDC1B8CC99E4CDD /* Pods-KesaApplicationTests-umbrella.h */,
+				3F31E2FDADE5E99DF6DA7891EEAB3157 /* Pods-KesaApplicationTests.debug.xcconfig */,
+				BAACF37C70317B90DCE4FE3364FE21F0 /* Pods-KesaApplicationTests.release.xcconfig */,
+			);
+			name = "Pods-KesaApplicationTests";
+			path = "Target Support Files/Pods-KesaApplicationTests";
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		415B6290126C8A308E806B08C50392C3 /* Pods-KesaApplication */ = {
+			isa = PBXGroup;
+			children = (
+				A12D5EC82D9F8BF65F1FFFA52D2A6F6D /* Info.plist */,
+				58281EF1A72BC649D378B6806D8DADF7 /* Pods-KesaApplication.modulemap */,
+				71C0B9DC2D55E692DF8C4877098C692D /* Pods-KesaApplication-acknowledgements.markdown */,
+				A5D5E772ACFA754FB6A6AB8C071D83E4 /* Pods-KesaApplication-acknowledgements.plist */,
+				96B2B47CD339F9D8CE7C1380CEDDB642 /* Pods-KesaApplication-dummy.m */,
+				68BDBF490988AEEFB8C53B561DAE512B /* Pods-KesaApplication-frameworks.sh */,
+				D1DFE88EE7B4240001630BD1F1640CD8 /* Pods-KesaApplication-resources.sh */,
+				68B33D4293ECB27D9ACD8191C1CA9087 /* Pods-KesaApplication-umbrella.h */,
+				40A2DE8E34C7FEA6818A15F07B7734D4 /* Pods-KesaApplication.debug.xcconfig */,
+				36810B4DD9D778A1A2838EFCF1C9AE5C /* Pods-KesaApplication.release.xcconfig */,
+			);
+			name = "Pods-KesaApplication";
+			path = "Target Support Files/Pods-KesaApplication";
+			sourceTree = "<group>";
+		};
+		492FA2F319B64E2C6ADCAEEC450992F0 /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				F81F16F781C66BB5DD6F8F607AE1B7F7 /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		4DDD284BE842D59A41AB3C93459FCA9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF11577D1086BBD20AB1515F7B122A93 /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		634DAB1E26EE4AD8712B2E5E22F4F24A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B4C79E06FB30F82BD4B36C61BCC20C9D /* Firebase */,
+				2ABA8F7BA215458D27153D649766A73F /* FirebaseAnalytics */,
+				CE3779316AC2B4A7F68C00AC6E471071 /* FirebaseAuth */,
+				639628D744923DBBAF0C4B2B12FB69B6 /* FirebaseInstanceID */,
+				1E84FFDB43ED9A1940A14279ED455F5F /* GoogleInterchangeUtilities */,
+				9A536A9154F031EF28F3C777726028EB /* GoogleNetworkingUtilities */,
+				0467A09FD982402E503CCD5089004D0F /* GoogleSymbolUtilities */,
+				492FA2F319B64E2C6ADCAEEC450992F0 /* GoogleUtilities */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		639628D744923DBBAF0C4B2B12FB69B6 /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				336B5FA62C43B44C37C87324932952E7 /* FIRInstanceID.h */,
+				4DDD284BE842D59A41AB3C93459FCA9B /* Frameworks */,
+			);
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		7098BE93D27ECEE6AE67C28744FC272A /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				479708CD7335FD4A9F50BB7A6BD0BDA7 /* Firebase.h */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				634DAB1E26EE4AD8712B2E5E22F4F24A /* Pods */,
+				0A0ED0C1BEC13656473C5F7EF77B1B2B /* Products */,
+				1D56F9AC1A4F07F82EE7CF15E4E7F38A /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8005B45B43DCF7744628D118CD5E2BA8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34CAF262BB71E7850041F47EF3260ED5 /* GoogleInterchangeUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A536A9154F031EF28F3C777726028EB /* GoogleNetworkingUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				E91858166B62F38BCCBE847265D98687 /* Frameworks */,
+			);
+			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		9E42C875269107D80E305CC832D7B5F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3021240F567B3789E2D53F0B5877AE09 /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E94CBD0C1F5E0F387F97F26ED2B4E33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E553A7EF3FB34805207AE443F886243A /* FirebaseAuth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4C79E06FB30F82BD4B36C61BCC20C9D /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				7098BE93D27ECEE6AE67C28744FC272A /* Analytics */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE3779316AC2B4A7F68C00AC6E471071 /* FirebaseAuth */ = {
+			isa = PBXGroup;
+			children = (
+				9E94CBD0C1F5E0F387F97F26ED2B4E33 /* Frameworks */,
+			);
+			path = FirebaseAuth;
+			sourceTree = "<group>";
+		};
+		DC9015FE90790A9ECFD4771F6399FB10 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				06B85C3A114C9E87BC9666EF491964CC /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E91858166B62F38BCCBE847265D98687 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				98BB44A16F79BEF584F971E949214C98 /* GoogleNetworkingUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F81F16F781C66BB5DD6F8F607AE1B7F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94E4F17500394FC485EE7C06E1FD1FB4 /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		573B3C1D50F5B589D3441CC87C8B55B5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2D8DE592465FCCC0B3A84FB95E4B3E9 /* Pods-KesaApplicationTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A62FA5E76EC18EAA8143C8004B6C57BE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03FE840FFB717385745A04C41BE30775 /* Pods-KesaApplication-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3EB7FFCA93FF8AA6C082CB7F57DD7948 /* Pods-KesaApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 058E95B4CD8370116B6BD6336D6F2B7E /* Build configuration list for PBXNativeTarget "Pods-KesaApplication" */;
+			buildPhases = (
+				7EAB9BF6056B6CC08E77D8988290CE0B /* Sources */,
+				ACFF455FE710DFCE4AD1B653C7674CC0 /* Frameworks */,
+				A62FA5E76EC18EAA8143C8004B6C57BE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-KesaApplication";
+			productName = "Pods-KesaApplication";
+			productReference = ED475535F3D388D60EA6F858E6127A3E /* Pods_KesaApplication.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B6F3A186FA1A5F4DDF857891A015C746 /* Pods-KesaApplicationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4CC82C0884EBD2C46A1FEC55CD9C402 /* Build configuration list for PBXNativeTarget "Pods-KesaApplicationTests" */;
+			buildPhases = (
+				F73AA7B7BC19713284CA62D7BB959EA0 /* Sources */,
+				64720EEC9E9A9A9A4BB6CF35F6B94479 /* Frameworks */,
+				573B3C1D50F5B589D3441CC87C8B55B5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-KesaApplicationTests";
+			productName = "Pods-KesaApplicationTests";
+			productReference = C1B704E4AE761AD16CBE241A3337882B /* Pods_KesaApplicationTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 0A0ED0C1BEC13656473C5F7EF77B1B2B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EB7FFCA93FF8AA6C082CB7F57DD7948 /* Pods-KesaApplication */,
+				B6F3A186FA1A5F4DDF857891A015C746 /* Pods-KesaApplicationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7EAB9BF6056B6CC08E77D8988290CE0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27921DB2375DC459FA5B1981A447D996 /* Pods-KesaApplication-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F73AA7B7BC19713284CA62D7BB959EA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				535C11E9CFF05A98C17D56392E34C29B /* Pods-KesaApplicationTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		034014829C1E4434983CF3A690C12017 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		4201EA7D61F3A8BA71AFC584152FD41B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40A2DE8E34C7FEA6818A15F07B7734D4 /* Pods-KesaApplication.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KesaApplication/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KesaApplication/Pods-KesaApplication.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KesaApplication;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		923FDED6B028B57F8B104A8FEDCFF71D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36810B4DD9D778A1A2838EFCF1C9AE5C /* Pods-KesaApplication.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KesaApplication/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KesaApplication/Pods-KesaApplication.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KesaApplication;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A51164AFC9E0D5DC60D073096229971E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAACF37C70317B90DCE4FE3364FE21F0 /* Pods-KesaApplicationTests.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KesaApplicationTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KesaApplicationTests/Pods-KesaApplicationTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KesaApplicationTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C1A4060986E6522138818320A9E96F55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F31E2FDADE5E99DF6DA7891EEAB3157 /* Pods-KesaApplicationTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-KesaApplicationTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KesaApplicationTests/Pods-KesaApplicationTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_KesaApplicationTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C7E474A03CAE21F1CB6046E7344C59BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		058E95B4CD8370116B6BD6336D6F2B7E /* Build configuration list for PBXNativeTarget "Pods-KesaApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4201EA7D61F3A8BA71AFC584152FD41B /* Debug */,
+				923FDED6B028B57F8B104A8FEDCFF71D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				034014829C1E4434983CF3A690C12017 /* Debug */,
+				C7E474A03CAE21F1CB6046E7344C59BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4CC82C0884EBD2C46A1FEC55CD9C402 /* Build configuration list for PBXNativeTarget "Pods-KesaApplicationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1A4060986E6522138818320A9E96F55 /* Debug */,
+				A51164AFC9E0D5DC60D073096229971E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
