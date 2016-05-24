@@ -156,6 +156,7 @@
 		1ADD2AFC1CDFFEEA00D39295 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = kesa;
 				TargetAttributes = {
@@ -411,6 +412,7 @@
 				1ADD2B251CDFFEEA00D39295 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1ADD2B261CDFFEEA00D39295 /* Build configuration list for PBXNativeTarget "KesaApplicationTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +421,7 @@
 				1ADD2B281CDFFEEA00D39295 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
