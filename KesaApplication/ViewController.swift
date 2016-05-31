@@ -8,32 +8,46 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
-    // 4 labels
+    
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var passwordLabel: UILabel!
     
-    // 4 text fields
+    
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
     
-    // When the login button is pressed, ignore all text fields
-    @IBAction func loginButtonPressed(sender: UIButton) {
-        self.firstName.resignFirstResponder() // don't worry about the keyboard
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        firstName.delegate = self // set delegate to 4 text fields
+        lastName.delegate = self
+        email.delegate = self
+        password.delegate = self
+        
+    }
+    
+    @IBAction func onLoginButtonClickListener(sender: UIButton) {
+        
+        /* Once login button is pressed, text fields are no longer important */
+        self.firstName.resignFirstResponder() // Give up first responder status
         self.lastName.resignFirstResponder()
         self.email.resignFirstResponder()
         self.password.resignFirstResponder()
     }
     
-    // When the screen is pressed while editing, hide the keyboard
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.view.endEditing(true)
+    
+    /* When the screen is touched */
+    override func touchesBegan(touches: Set<UITouch>,
+                               withEvent event: UIEvent?) {
+        self.view.endEditing(true) /* For instances where the keyboard is 
+                                      already brought up, Hide the keyboard */
         firstNameLabel.textColor = UIColor.blackColor()
         lastNameLabel.textColor = UIColor.blackColor()
         emailLabel.textColor = UIColor.blackColor()
@@ -42,97 +56,131 @@ class ViewController: UIViewController {
     
     
     
-    // Highlighting each labels when their text fields are pressed
-    @IBAction func firstNameTextFieldPressed(sender: UITextField) {
-        firstNameLabel.textColor = UIColor.orangeColor()
-        lastNameLabel.textColor = UIColor.blackColor()
-        emailLabel.textColor = UIColor.blackColor()
-        passwordLabel.textColor = UIColor.blackColor()
-    }
-    
-    @IBAction func lastNameTextFieldPressed(sender: UITextField) {
-        firstNameLabel.textColor = UIColor.blackColor()
-        lastNameLabel.textColor = UIColor.orangeColor()
-        emailLabel.textColor = UIColor.blackColor()
-        passwordLabel.textColor = UIColor.blackColor()
-    }
+    // Highlighting each labels when their text fields are chosen
+    func textFieldDidBeginEditing(textField: UITextField) {
+        
+        if (textField == firstName) {
+            firstNameLabel.textColor = UIColor.orangeColor()
+            lastNameLabel.textColor = UIColor.blackColor()
+            emailLabel.textColor = UIColor.blackColor()
+            passwordLabel.textColor = UIColor.blackColor()
+        }
 
-    
-    @IBAction func emailTextFieldPressed(sender: UITextField) {
-        firstNameLabel.textColor = UIColor.blackColor()
-        lastNameLabel.textColor = UIColor.blackColor()
-        emailLabel.textColor = UIColor.orangeColor()
-        passwordLabel.textColor = UIColor.blackColor()
+        else if (textField == lastName) {
+            firstNameLabel.textColor = UIColor.blackColor()
+            lastNameLabel.textColor = UIColor.orangeColor()
+            emailLabel.textColor = UIColor.blackColor()
+            passwordLabel.textColor = UIColor.blackColor()
+        }
+        
+        else if (textField == email) {
+            firstNameLabel.textColor = UIColor.blackColor()
+            lastNameLabel.textColor = UIColor.blackColor()
+            emailLabel.textColor = UIColor.orangeColor()
+            passwordLabel.textColor = UIColor.blackColor()
+        }
+
+        else {
+            firstNameLabel.textColor = UIColor.blackColor()
+            lastNameLabel.textColor = UIColor.blackColor()
+            emailLabel.textColor = UIColor.blackColor()
+            passwordLabel.textColor = UIColor.orangeColor()
+        }
+        
     }
     
-    @IBAction func passwordTextFieldPressed(sender: UITextField) {
-        firstNameLabel.textColor = UIColor.blackColor()
-        lastNameLabel.textColor = UIColor.blackColor()
-        emailLabel.textColor = UIColor.blackColor()
-        passwordLabel.textColor = UIColor.orangeColor()
-    }
     
-    
-    
-    // When "Create Account" button is pressed
-    @IBAction func createAccountButtonPressed(sender: UIButton) {
+    @IBAction func onCreateAccountButtonClickListener(sender: UIButton) {
+        
+        let utility = Utility() // An instance of the Utility Class
         
         let userFirstName = firstName.text
         let userLastName = lastName.text
         let userEmail = email.text
         let userPassword = password.text
         
-        // Check for empty fields
-        if (userFirstName!.isEmpty || userLastName!.isEmpty ||
-            userEmail!.isEmpty || userPassword!.isEmpty) {
+        // Booleans to check if the names have numbers included in them 
+        let checkFirstName = utility.isValidNameFormat(userFirstName!)
+        let checkLastName = utility.isValidNameFormat(userLastName!)
+        
+        /* Check for empty fields */
+        if (userFirstName!.isEmpty) {
             
-            // Display alert message 
-            displayAlertMessage ("All fields are required");
+            // Display alert message
+            displayAlertMessage ("First name field is required");
             
             return
         }
         
-        // Email validity check
-        if isValidEmail(userEmail!)  {
         
-        
-            // Store data
-            
-        }
-        
-        else {
-            displayAlertMessage ("Invalid email address")
+        else if (userLastName!.isEmpty) {
+         
+            displayAlertMessage("Last name field is required")
             
             return
+        }
+            
+        else if (userEmail!.isEmpty) {
+            
+            displayAlertMessage("Email field is required")
+            
+            return
+        }
+            
+        else if (userPassword!.isEmpty) {
+            
+            displayAlertMessage("Password field is required")
+            
+            return
+        }
+        
+        // check if the names are valid (no numbers included)
+        else if (!checkFirstName) {
+            
+            displayAlertMessage("Invalid first name")
+            
+            return
+        }
+        
+        else if (!checkLastName) {
+            
+            displayAlertMessage("Invalid last name")
+            
+            return
+        }
+        
+        else { // Email validity check
+            
+            if utility.isValidEmailFormat(userEmail!)  {
+            
+            
+                // Store data and etc
+            
+            }
+            
+            else {
+                displayAlertMessage ("Invalid email address")
+            
+                return
+            }
         }
     }
+ 
     
-    
-    
-    // Function for displaying alert messages
+    /* Function for displaying alert messages */
     func displayAlertMessage (userMessage: String){
         
-        let alert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Alert", message: userMessage,
+                                      preferredStyle:
+                                      UIAlertControllerStyle.Alert)
         
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default, handler: nil)
+        let okAction = UIAlertAction(title: "Ok",
+                                     style: UIAlertActionStyle.Default,
+                                     handler: nil)
         
         alert.addAction(okAction)
         
         self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    
-    
-    // Function to help check for the email validity 
-    // Returns a boolean
-    func isValidEmail (testEmail:String) -> Bool {
-        
-        let emailRegEx = "^(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?(?:(?:(?:[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+(?:\\.[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+)*)|(?:\"(?:(?:(?:(?: )*(?:(?:[!#-Z^-~]|\\[|\\])|(?:\\\\(?:\\t|[ -~]))))+(?: )*)|(?: )+)\"))(?:@)(?:(?:(?:[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)(?:\\.[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)*)|(?:\\[(?:(?:(?:(?:(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))\\.){3}(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))))|(?:(?:(?: )*[!-Z^-~])*(?: )*)|(?:[Vv][0-9A-Fa-f]+\\.[-A-Za-z0-9._~!$&'()*+,;=:]+))\\])))(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?$"
-        
-        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-        let result = emailTest.evaluateWithObject(testEmail)
-        
-        return result
     }
     
 }
