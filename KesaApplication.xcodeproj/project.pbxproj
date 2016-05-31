@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1A811A061CF2978400B57455 /* ResultHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A811A051CF2978400B57455 /* ResultHandler.swift */; };
 		1A811A081CF29CA900B57455 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A811A071CF29CA900B57455 /* GoogleService-Info.plist */; };
+		1A811A0A1CF7FD6200B57455 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A811A091CF7FD6200B57455 /* User.swift */; };
 		1AB4522C1CF29181000F3443 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB4522B1CF29181000F3443 /* AccountManager.swift */; };
 		1ADD2B0A1CDFFEEA00D39295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADD2B091CDFFEEA00D39295 /* AppDelegate.swift */; };
 		1ADD2B0C1CDFFEEA00D39295 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADD2B0B1CDFFEEA00D39295 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		1A811A051CF2978400B57455 /* ResultHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultHandler.swift; sourceTree = "<group>"; };
 		1A811A071CF29CA900B57455 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1A811A091CF7FD6200B57455 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1AB4522B1CF29181000F3443 /* AccountManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		1ADD2B041CDFFEEA00D39295 /* KesaApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KesaApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ADD2B081CDFFEEA00D39295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				1ADD2B071CDFFEEA00D39295 /* Supporting Files */,
 				1AB4522B1CF29181000F3443 /* AccountManager.swift */,
 				1A811A051CF2978400B57455 /* ResultHandler.swift */,
+				1A811A091CF7FD6200B57455 /* User.swift */,
 			);
 			path = KesaApplication;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				1ADD2B0C1CDFFEEA00D39295 /* ViewController.swift in Sources */,
 				1ADD2B0A1CDFFEEA00D39295 /* AppDelegate.swift in Sources */,
 				1AB4522C1CF29181000F3443 /* AccountManager.swift in Sources */,
+				1A811A0A1CF7FD6200B57455 /* User.swift in Sources */,
 				1A811A061CF2978400B57455 /* ResultHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
