@@ -11,28 +11,25 @@ import UIKit
 
 class Utility {
     
-    /* Function to help check for the email validity */
-    func isValidEmailFormat (testEmail:String) -> Bool {
+    class func isValidEmailFormat (email:String) -> Bool {
         
         let emailRegEx = "^(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?(?:(?:(?:[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+(?:\\.[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+)*)|(?:\"(?:(?:(?:(?: )*(?:(?:[!#-Z^-~]|\\[|\\])|(?:\\\\(?:\\t|[ -~]))))+(?: )*)|(?: )+)\"))(?:@)(?:(?:(?:[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)(?:\\.[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)*)|(?:\\[(?:(?:(?:(?:(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))\\.){3}(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))))|(?:(?:(?: )*[!-Z^-~])*(?: )*)|(?:[Vv][0-9A-Fa-f]+\\.[-A-Za-z0-9._~!$&'()*+,;=:]+))\\])))(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?$"
         
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
-        let result = emailTest.evaluateWithObject(testEmail)
+        
+        let result = emailTest.evaluateWithObject(email)
         
         return result
     }
     
     
-    
-    /* Function to help check names with numbers */
-    func isValidNameFormat (testName:String) -> Bool {
+    class func isValidNameFormat (name:String) -> Bool {
         
         let decimalCharacters = NSCharacterSet.decimalDigitCharacterSet()
         
-        let decimalRange = testName.rangeOfCharacterFromSet(decimalCharacters,
-                                                            options:
-                                                    NSStringCompareOptions(),
-                                                            range: nil)
+        let decimalRange = name.rangeOfCharacterFromSet(decimalCharacters,
+                                                        options: NSStringCompareOptions(),
+                                                        range: nil)
         
         if decimalRange != nil {
             return false
