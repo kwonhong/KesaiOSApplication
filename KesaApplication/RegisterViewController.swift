@@ -81,7 +81,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             lastNameLabel.textColor = UIColor.blackColor()
             emailLabel.textColor = UIColor.blackColor()
             passwordLabel.textColor = UIColor.blackColor()
-            
         }
     }
     
