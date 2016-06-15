@@ -26,17 +26,26 @@ class Utility {
     class func isValidNameFormat (name:String) -> Bool {
         
         let decimalCharacters = NSCharacterSet.decimalDigitCharacterSet()
+        let decimalRange =
+            name.rangeOfCharacterFromSet(decimalCharacters,
+                                         options: NSStringCompareOptions(),
+                                         range: nil)
         
-        let decimalRange = name.rangeOfCharacterFromSet(decimalCharacters,
-                                                        options: NSStringCompareOptions(),
-                                                        range: nil)
-        
-        if decimalRange != nil {
-            return false
-        }
-        
-        return true
+        return decimalRange == nil
     }
     
     
+    class func displayAlertMessage (userMessage: String, viewController: UIViewController) {
+        
+        let alert = UIAlertController(title: "Alert",
+                                      message: userMessage,
+                                      preferredStyle: UIAlertControllerStyle.Alert)
+        let okAction = UIAlertAction(title: "Ok",
+                                     style: UIAlertActionStyle.Default,
+                                     handler: nil)
+        
+        alert.addAction(okAction)
+        
+        viewController.presentViewController(alert, animated: true, completion: nil)
+    }
 }
