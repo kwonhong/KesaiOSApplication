@@ -18,6 +18,9 @@
 		1ADD2B141CDFFEEA00D39295 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ADD2B121CDFFEEA00D39295 /* LaunchScreen.xib */; };
 		1ADD2B201CDFFEEA00D39295 /* KesaApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ADD2B1F1CDFFEEA00D39295 /* KesaApplicationTests.swift */; };
 		62735B4FB624BF6C84FF1E3F /* Pods_KesaApplicationTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B6E1AF401B80F5AEDF3779C /* Pods_KesaApplicationTests.framework */; };
+		69F9B50D1D1CD390001EACD2 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F9B50C1D1CD390001EACD2 /* Utility.swift */; };
+		69F9B50F1D1CD3FC001EACD2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F9B50E1D1CD3FC001EACD2 /* RegisterViewController.swift */; };
+		69F9B5111D1CD443001EACD2 /* AfterRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F9B5101D1CD443001EACD2 /* AfterRegisterViewController.swift */; };
 		C38AA1E21CFEB38F004BA77E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38AA1E11CFEB38F004BA77E /* LoginViewController.swift */; };
 		CC96F29F17CAAE0EBF323DB6 /* Pods_KesaApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BA9EDD73DAD6D905CC6BC4 /* Pods_KesaApplication.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +51,9 @@
 		1ADD2B1E1CDFFEEA00D39295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ADD2B1F1CDFFEEA00D39295 /* KesaApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KesaApplicationTests.swift; sourceTree = "<group>"; };
 		5B6E1AF401B80F5AEDF3779C /* Pods_KesaApplicationTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KesaApplicationTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69F9B50C1D1CD390001EACD2 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		69F9B50E1D1CD3FC001EACD2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		69F9B5101D1CD443001EACD2 /* AfterRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfterRegisterViewController.swift; sourceTree = "<group>"; };
 		73BA9EDD73DAD6D905CC6BC4 /* Pods_KesaApplication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KesaApplication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		856BEAA171BFD687BDF26A6D /* Pods-KesaApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KesaApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-KesaApplication/Pods-KesaApplication.release.xcconfig"; sourceTree = "<group>"; };
 		884AA2C0BF6E7DF9BB5660B7 /* Pods-KesaApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KesaApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KesaApplication/Pods-KesaApplication.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +127,9 @@
 				1A811A051CF2978400B57455 /* ResultHandler.swift */,
 				1A811A091CF7FD6200B57455 /* User.swift */,
 				C38AA1E11CFEB38F004BA77E /* LoginViewController.swift */,
+				69F9B50C1D1CD390001EACD2 /* Utility.swift */,
+				69F9B50E1D1CD3FC001EACD2 /* RegisterViewController.swift */,
+				69F9B5101D1CD443001EACD2 /* AfterRegisterViewController.swift */,
 			);
 			path = KesaApplication;
 			sourceTree = "<group>";
@@ -360,8 +369,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69F9B50D1D1CD390001EACD2 /* Utility.swift in Sources */,
+				69F9B5111D1CD443001EACD2 /* AfterRegisterViewController.swift in Sources */,
 				C38AA1E21CFEB38F004BA77E /* LoginViewController.swift in Sources */,
 				1ADD2B0C1CDFFEEA00D39295 /* ViewController.swift in Sources */,
+				69F9B50F1D1CD3FC001EACD2 /* RegisterViewController.swift in Sources */,
 				1ADD2B0A1CDFFEEA00D39295 /* AppDelegate.swift in Sources */,
 				1AB4522C1CF29181000F3443 /* AccountManager.swift in Sources */,
 				1A811A0A1CF7FD6200B57455 /* User.swift in Sources */,
