@@ -27,6 +27,8 @@
 		C3480EF31D768D5400FC926C /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3480EF21D768D5400FC926C /* ContactCell.swift */; };
 		C38AA1E21CFEB38F004BA77E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38AA1E11CFEB38F004BA77E /* LoginViewController.swift */; };
 		CC96F29F17CAAE0EBF323DB6 /* Pods_KesaApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BA9EDD73DAD6D905CC6BC4 /* Pods_KesaApplication.framework */; };
+		D0E5303D1D2333370063D558 /* versionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5303C1D2333370063D558 /* versionViewController.swift */; };
+		D0E5303F1D233BED0063D558 /* editViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E5303E1D233BED0063D558 /* editViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		C3480EF21D768D5400FC926C /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		C38AA1E11CFEB38F004BA77E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEB982269B6CA433E4C133A6 /* Pods-KesaApplicationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KesaApplicationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KesaApplicationTests/Pods-KesaApplicationTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D0E5303C1D2333370063D558 /* versionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = versionViewController.swift; sourceTree = "<group>"; };
+		D0E5303E1D233BED0063D558 /* editViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 				1A811A071CF29CA900B57455 /* GoogleService-Info.plist */,
 				1ADD2B091CDFFEEA00D39295 /* AppDelegate.swift */,
 				1ADD2B0B1CDFFEEA00D39295 /* ViewController.swift */,
+				D0E5303C1D2333370063D558 /* versionViewController.swift */,
+				D0E5303E1D233BED0063D558 /* editViewController.swift */,
 				1ADD2B0D1CDFFEEA00D39295 /* Main.storyboard */,
 				1ADD2B101CDFFEEA00D39295 /* Images.xcassets */,
 				1ADD2B121CDFFEEA00D39295 /* LaunchScreen.xib */,
@@ -388,6 +394,8 @@
 				697A8A201D7640BC00C67E4A /* ProfilePageViewController.swift in Sources */,
 				1ADD2B0C1CDFFEEA00D39295 /* ViewController.swift in Sources */,
 				69F9B50F1D1CD3FC001EACD2 /* RegisterViewController.swift in Sources */,
+				D0E5303D1D2333370063D558 /* versionViewController.swift in Sources */,
+				D0E5303F1D233BED0063D558 /* editViewController.swift in Sources */,
 				1ADD2B0A1CDFFEEA00D39295 /* AppDelegate.swift in Sources */,
 				C3480EF31D768D5400FC926C /* ContactCell.swift in Sources */,
 				C3480EF11D768D2A00FC926C /* ContactListViewController .swift in Sources */,
