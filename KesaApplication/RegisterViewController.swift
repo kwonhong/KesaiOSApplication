@@ -72,6 +72,9 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func onAlreadyHaveAccountButtonClickListner(sender: AnyObject) {
+        navigationController!.popViewControllerAnimated(true)
+    }
     
     @IBAction func onCreateAccountButtonClickListener(sender: UIButton) {
         
