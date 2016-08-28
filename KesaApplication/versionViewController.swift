@@ -18,15 +18,10 @@ class versionViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var contactInfoButton: UISwitch!
     
     let imagePicker = UIImagePickerController()
-    var test1 = NSMutableArray()
-    var test2 = NSMutableArray()
-    var sTest1 = NSString()
-    var sTest2 = NSString()
-    
-    
-    
-    
-    
+    var textlabelArray = NSMutableArray()
+    var detailedTextLabelArray = NSMutableArray()
+    var selectedTextLabel = NSString()
+    var selectedDetailedTextLabel = NSString()
     
     @IBAction func changePictureListner(sender: AnyObject) {
         imagePicker.allowsEditing = false
@@ -61,8 +56,6 @@ class versionViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         changePicture.setImage(UIImage(named: "ic_mode_edit"), forState: .Normal)
         changePicture.setTitle("change picture", forState: .Normal)
@@ -118,7 +111,7 @@ class versionViewController: UIViewController, UITableViewDelegate, UITableViewD
             return 4
         }
         else{
-            return 2
+            return 3
         }
     }
     
@@ -154,8 +147,14 @@ class versionViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
         }
         else if (indexPath.row == 2) {
-            cell.textLabel?.text = "Program"
-            cell.detailTextLabel?.text = "ECE"
+            if (currentTableView == topProfileTableView) {
+                cell.textLabel?.text = "Program"
+                cell.detailTextLabel?.text = "ECE"
+            }
+            else {
+                cell.textLabel?.text = "Contact Method"
+                cell.detailTextLabel?.text = "Phone Call"
+            }
         }
         else if (indexPath.row == 3) {
             cell.textLabel?.text = "Admission Year"
@@ -163,12 +162,12 @@ class versionViewController: UIViewController, UITableViewDelegate, UITableViewD
             
         }
         if (currentTableView == topProfileTableView) {
-            test1.insertObject((cell.textLabel?.text)!, atIndex: indexPath.row + 2)
-            test2.insertObject((cell.detailTextLabel?.text)!, atIndex: indexPath.row + 2)
+            textlabelArray.insertObject((cell.textLabel?.text)!, atIndex: indexPath.row + 3)
+            detailedTextLabelArray.insertObject((cell.detailTextLabel?.text)!, atIndex: indexPath.row + 3)
         }
         else {
-            test1.insertObject((cell.textLabel?.text)!, atIndex: indexPath.row)
-            test2.insertObject((cell.detailTextLabel?.text)!, atIndex: indexPath.row)
+            textlabelArray.insertObject((cell.textLabel?.text)!, atIndex: indexPath.row)
+            detailedTextLabelArray.insertObject((cell.detailTextLabel?.text)!, atIndex: indexPath.row)
         }
         
         // Configure the cell...
@@ -178,12 +177,16 @@ class versionViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(currentTableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (currentTableView == topProfileTableView) {
-            sTest1 = test1.objectAtIndex(indexPath.row + 2) as! NSString
-            sTest2 = test2.objectAtIndex(indexPath.row + 2) as! NSString
+            selectedTextLabel = textlabelArray.objectAtIndex(indexPath.row + 3) as! NSString
+            selectedDetailedTextLabel = detailedTextLabelArray.objectAtIndex(indexPath.row + 3) as! NSString
         }
         else {
-            sTest1 = test1.objectAtIndex(indexPath.row) as! NSString
-            sTest2 = test2.objectAtIndex(indexPath.row) as! NSString
+            selectedTextLabel = textlabelArray.objectAtIndex(indexPath.row) as! NSString
+            selectedDetailedTextLabel = detailedTextLabelArray.objectAtIndex(indexPath.row) as! NSString
+            if (indexPath.row == 2) {
+                performSegueWithIdentifier("contactMethodSegue", sender: self)
+                return
+            }
         }
         performSegueWithIdentifier("editSegue", sender: self)
     }
@@ -195,10 +198,14 @@ class versionViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if (shouldPerformSegueWithIdentifier("editSegue", sender: self)) {
+        if (segue.identifier == "editSegue") {
             let next = segue.destinationViewController as! editViewController
-            next.getTitle(sTest1)
-            next.getSubTitle(sTest2)
+            next.getTitle(selectedTextLabel)
+            next.getSubTitle(selectedDetailedTextLabel)
+        }
+        else if (segue.identifier == "contactMethodSegue") {
+            let next = segue.destinationViewController as! contactMethodViewController
+            next.getCurrentMethod(selectedDetailedTextLabel)
         }
     }
  
