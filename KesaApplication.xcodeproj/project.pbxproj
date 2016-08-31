@@ -23,6 +23,8 @@
 		69F9B50D1D1CD390001EACD2 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F9B50C1D1CD390001EACD2 /* Utility.swift */; };
 		69F9B50F1D1CD3FC001EACD2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F9B50E1D1CD3FC001EACD2 /* RegisterViewController.swift */; };
 		69F9B5111D1CD443001EACD2 /* AfterRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F9B5101D1CD443001EACD2 /* AfterRegisterViewController.swift */; };
+		C3480EF11D768D2A00FC926C /* ContactListViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = C3480EF01D768D2A00FC926C /* ContactListViewController .swift */; };
+		C3480EF31D768D5400FC926C /* ContactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3480EF21D768D5400FC926C /* ContactCell.swift */; };
 		C38AA1E21CFEB38F004BA77E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38AA1E11CFEB38F004BA77E /* LoginViewController.swift */; };
 		CC96F29F17CAAE0EBF323DB6 /* Pods_KesaApplication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BA9EDD73DAD6D905CC6BC4 /* Pods_KesaApplication.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +64,8 @@
 		856BEAA171BFD687BDF26A6D /* Pods-KesaApplication.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KesaApplication.release.xcconfig"; path = "Pods/Target Support Files/Pods-KesaApplication/Pods-KesaApplication.release.xcconfig"; sourceTree = "<group>"; };
 		884AA2C0BF6E7DF9BB5660B7 /* Pods-KesaApplication.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KesaApplication.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KesaApplication/Pods-KesaApplication.debug.xcconfig"; sourceTree = "<group>"; };
 		9C8F1A186D1345DBE48AC14F /* Pods-KesaApplicationTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KesaApplicationTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KesaApplicationTests/Pods-KesaApplicationTests.release.xcconfig"; sourceTree = "<group>"; };
+		C3480EF01D768D2A00FC926C /* ContactListViewController .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactListViewController .swift"; sourceTree = "<group>"; };
+		C3480EF21D768D5400FC926C /* ContactCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCell.swift; sourceTree = "<group>"; };
 		C38AA1E11CFEB38F004BA77E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEB982269B6CA433E4C133A6 /* Pods-KesaApplicationTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KesaApplicationTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KesaApplicationTests/Pods-KesaApplicationTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +139,8 @@
 				69F9B50C1D1CD390001EACD2 /* Utility.swift */,
 				69F9B50E1D1CD3FC001EACD2 /* RegisterViewController.swift */,
 				69F9B5101D1CD443001EACD2 /* AfterRegisterViewController.swift */,
+				C3480EF01D768D2A00FC926C /* ContactListViewController .swift */,
+				C3480EF21D768D5400FC926C /* ContactCell.swift */,
 			);
 			path = KesaApplication;
 			sourceTree = "<group>";
@@ -383,6 +389,8 @@
 				1ADD2B0C1CDFFEEA00D39295 /* ViewController.swift in Sources */,
 				69F9B50F1D1CD3FC001EACD2 /* RegisterViewController.swift in Sources */,
 				1ADD2B0A1CDFFEEA00D39295 /* AppDelegate.swift in Sources */,
+				C3480EF31D768D5400FC926C /* ContactCell.swift in Sources */,
+				C3480EF11D768D2A00FC926C /* ContactListViewController .swift in Sources */,
 				1AB4522C1CF29181000F3443 /* AccountManager.swift in Sources */,
 				1A811A0A1CF7FD6200B57455 /* User.swift in Sources */,
 				1A811A061CF2978400B57455 /* ResultHandler.swift in Sources */,

@@ -18,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // Set navigation bar tint / background colour
+        UINavigationBar.appearance().barTintColor = UIColor.orangeColor()
+        // Set Navigation bar Title colour
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.whiteColor()]
+        
         // Use Firebase library to configure APIs
         FIRApp.configure()
         return true
