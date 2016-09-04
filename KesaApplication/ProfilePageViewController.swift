@@ -20,18 +20,33 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         
         // Additional setup after loading the view.
         
-        profilePicture.layer.borderWidth = 1
-        profilePicture.layer.masksToBounds = false
-        profilePicture.layer.borderColor = UIColor.blackColor().CGColor
-        profilePicture.layer.cornerRadius = profilePicture.frame.height/2
+//        profilePicture.layer.borderWidth = 1
+//        profilePicture.layer.masksToBounds = false
+//        profilePicture.layer.borderColor = UIColor.blackColor().CGColor
+//        profilePicture.layer.cornerRadius = profilePicture.frame.height/2
+//        profilePicture.clipsToBounds = true
+        
+        profilePicture.layer.borderColor = UIColor.clearColor().CGColor
+        profilePicture.layer.cornerRadius = profilePicture.frame.size.height/2
         profilePicture.clipsToBounds = true
         
         
         firstTableView.delegate = self
         firstTableView.dataSource = self
+        firstTableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        firstTableView.separatorInset.left = 0
+        
         secondTableView.delegate = self
         secondTableView.dataSource = self
+        secondTableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
+        secondTableView.separatorInset.left = 0
         
+        firstTableView.layer.cornerRadius = 10
+        secondTableView.layer.cornerRadius = 10
+        
+        
+        let image: UIImage = UIImage(named: "ic_account_circle")!
+        profilePicture.image = image
     }
 
     override func didReceiveMemoryWarning() {

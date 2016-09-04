@@ -8,7 +8,7 @@
 
 import UIKit
 
-class versionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class selfProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var changePicture: UIButton!
@@ -32,6 +32,13 @@ class versionViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func doneListner(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func logOutButtonListner(sender: AnyObject) {
+        let userInfo = NSUserDefaults.standardUserDefaults()
+        userInfo.setObject(nil, forKey:"email")
+        //dismissViewControllerAnimated(true, completion:nil)
+        navigationController!.popViewControllerAnimated(true)
     }
     
     @IBAction func contactInfoButtonListner(sender: AnyObject) {
@@ -120,10 +127,10 @@ class versionViewController: UIViewController, UITableViewDelegate, UITableViewD
         var cell = UITableViewCell()
         
         if (currentTableView == topProfileTableView) {
-            cell = topProfileTableView.dequeueReusableCellWithIdentifier("testCell1", forIndexPath: indexPath) as UITableViewCell
+            cell = topProfileTableView.dequeueReusableCellWithIdentifier("topTableViewCell", forIndexPath: indexPath) as UITableViewCell
         }
         else {
-            cell = bottomProfileTableView.dequeueReusableCellWithIdentifier("testCell2", forIndexPath: indexPath) as UITableViewCell
+            cell = bottomProfileTableView.dequeueReusableCellWithIdentifier("bottomTableViewCell", forIndexPath: indexPath) as UITableViewCell
         }
         
         if (indexPath.row == 0) {

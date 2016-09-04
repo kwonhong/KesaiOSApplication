@@ -25,6 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Use Firebase library to configure APIs
         FIRApp.configure()
+        
+        let userInfo = NSUserDefaults.standardUserDefaults()
+        let storyboard = UIStoryboard.init(name:"Main", bundle:nil)
+        let LVC = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
+        let CLVC = storyboard.instantiateViewControllerWithIdentifier("EditProfileViewController")
+        let navController = self.window?.rootViewController as! UINavigationController
+        
+        if ((userInfo.objectForKey("email")) != nil) {
+            navController.setViewControllers([LVC, CLVC], animated:true)
+        }
+        else {
+            navController.setViewControllers([LVC], animated:true)
+        }
         return true
     }
 

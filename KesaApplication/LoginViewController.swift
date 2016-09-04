@@ -64,17 +64,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //Hide Keyboard when login button clicked
         self.userEmailTextField.resignFirstResponder()
         self.userPasswordTextField.resignFirstResponder()
+        let userInfo = NSUserDefaults.standardUserDefaults()
+        userInfo.setObject(self.userEmailTextField.text, forKey:"email")
     }
     
     //Hide Keyboard when background clicked
     override func touchesBegan(touches: Set<UITouch>,
                                withEvent event: UIEvent?) {
         self.view.endEditing(true)
+        userEmailTextField.textColor = UIColor.blackColor()
+        userPasswordTextField.textColor = UIColor.blackColor()
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        userEmailTextField.textColor = UIColor.blackColor()
-        userPasswordTextField.textColor = UIColor.blackColor()
+        userEmailLabel.textColor = UIColor.blackColor()
+        userPasswordLabel.textColor = UIColor.blackColor()
         
         switch textField {
         case userEmailTextField:
