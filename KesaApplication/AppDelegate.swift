@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userInfo = NSUserDefaults.standardUserDefaults()
         let storyboard = UIStoryboard.init(name:"Main", bundle:nil)
         let LVC = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
-        let CLVC = storyboard.instantiateViewControllerWithIdentifier("EditProfileViewController")
+        let CLVC = storyboard.instantiateViewControllerWithIdentifier("ContactListViewController")
         let navController = self.window?.rootViewController as! UINavigationController
         
         if ((userInfo.objectForKey("email")) != nil) {

@@ -30,17 +30,6 @@ class selfProfileViewController: UIViewController, UITableViewDelegate, UITableV
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func doneListner(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    @IBAction func logOutButtonListner(sender: AnyObject) {
-        let userInfo = NSUserDefaults.standardUserDefaults()
-        userInfo.setObject(nil, forKey:"email")
-        //dismissViewControllerAnimated(true, completion:nil)
-        navigationController!.popViewControllerAnimated(true)
-    }
-    
     @IBAction func contactInfoButtonListner(sender: AnyObject) {
         let alert = UIAlertController(title: "Contact Sharing", message: "Are you sure? Turning this on will make your contact information visible to anyone. By default, the contact information is only visible to executive members", preferredStyle: UIAlertControllerStyle.Alert)
         

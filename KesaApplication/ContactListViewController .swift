@@ -12,7 +12,14 @@ import UIKit
 import UIKit
 
 class ContactListViewController : UITableViewController {
-        
+    
+    @IBAction func logOutButtonListner(sender: AnyObject) {
+        let userInfo = NSUserDefaults.standardUserDefaults()
+        userInfo.setObject(nil, forKey:"email")
+        //dismissViewControllerAnimated(true, completion:nil)
+        navigationController!.popViewControllerAnimated(true)
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          return kJUSTUnlimited
     }
@@ -27,7 +34,8 @@ class ContactListViewController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        NSLog("Touch Table Row at %d", indexPath.row)
+        performSegueWithIdentifier("profilePageViewSegue", sender: self)
+        //NSLog("Touch Table Row at %d", indexPath.row)
     }
 }
 
