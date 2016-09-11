@@ -211,15 +211,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uaa-WV-38d">
-                                <rect key="frame" x="59" y="411" width="482" height="30"/>
-                                <state key="normal" title="No account yet? Create one">
-                                    <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="dDW-Lo-4Rw" kind="show" id="0OH-JB-57g"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeU-ev-NAM">
                                 <rect key="frame" x="55" y="415" width="482" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -228,7 +219,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onLoginButtonClickListener:" destination="hjC-hS-wWw" eventType="touchUpInside" id="Uxg-op-tNo"/>
-                                    <segue destination="XTg-Jb-6on" kind="show" id="UR1-4C-CKS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -238,7 +228,6 @@
                             <constraint firstItem="Z2W-XR-Zyf" firstAttribute="top" secondItem="MhY-5r-nyz" secondAttribute="bottom" constant="2" id="8Hg-Yp-mLh"/>
                             <constraint firstAttribute="trailing" secondItem="ib4-7G-oT3" secondAttribute="trailing" constant="59" id="B1U-TA-ctb"/>
                             <constraint firstAttribute="trailing" secondItem="AeU-ev-NAM" secondAttribute="trailing" constant="63" id="Cfj-hM-gF2"/>
-                            <constraint firstItem="Uaa-WV-38d" firstAttribute="top" secondItem="AeU-ev-NAM" secondAttribute="bottom" constant="-34" id="E0z-FF-OqR"/>
                             <constraint firstItem="AeU-ev-NAM" firstAttribute="leading" secondItem="sK6-04-0YA" secondAttribute="leading" constant="55" id="J2h-xY-cV4"/>
                             <constraint firstItem="zfX-5v-ted" firstAttribute="centerX" secondItem="sK6-04-0YA" secondAttribute="centerX" id="MPC-Ci-hUU"/>
                             <constraint firstItem="EwH-2b-VJA" firstAttribute="leading" secondItem="sK6-04-0YA" secondAttribute="leading" constant="59" id="OYX-XT-ZxK"/>
@@ -246,9 +235,7 @@
                             <constraint firstItem="AeU-ev-NAM" firstAttribute="top" secondItem="Z2W-XR-Zyf" secondAttribute="bottom" constant="57" id="TMp-la-ODd"/>
                             <constraint firstItem="MhY-5r-nyz" firstAttribute="top" secondItem="ib4-7G-oT3" secondAttribute="bottom" constant="14" id="UFV-Nh-wun"/>
                             <constraint firstItem="Z2W-XR-Zyf" firstAttribute="leading" secondItem="sK6-04-0YA" secondAttribute="leading" constant="59" id="YNR-yi-cWj"/>
-                            <constraint firstItem="Uaa-WV-38d" firstAttribute="leading" secondItem="sK6-04-0YA" secondAttribute="leading" constant="59" id="bRE-qA-i2R"/>
                             <constraint firstItem="MhY-5r-nyz" firstAttribute="top" secondItem="ib4-7G-oT3" secondAttribute="bottom" constant="14" id="eN9-8A-G3p"/>
-                            <constraint firstAttribute="trailing" secondItem="Uaa-WV-38d" secondAttribute="trailing" constant="59" id="hYg-ZJ-0lN"/>
                             <constraint firstItem="zfX-5v-ted" firstAttribute="top" secondItem="Ald-yo-7cV" secondAttribute="bottom" constant="6" id="j5Q-CA-kL5"/>
                             <constraint firstItem="ib4-7G-oT3" firstAttribute="leading" secondItem="sK6-04-0YA" secondAttribute="leading" constant="59" id="mbR-NG-Ngm"/>
                             <constraint firstItem="MhY-5r-nyz" firstAttribute="leading" secondItem="sK6-04-0YA" secondAttribute="leading" constant="59" id="qPg-Vj-IlF"/>
@@ -270,6 +257,7 @@
                         <outlet property="userEmailTextField" destination="ib4-7G-oT3" id="v3k-Nj-4nN"/>
                         <outlet property="userPasswordLabel" destination="MhY-5r-nyz" id="dPx-ID-l6b"/>
                         <outlet property="userPasswordTextField" destination="Z2W-XR-Zyf" id="1h5-PT-YfG"/>
+                        <segue destination="XTg-Jb-6on" kind="show" identifier="contactListSegue" id="6K8-6P-8tY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2d0-tL-LOh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -353,7 +341,7 @@
                     <navigationItem key="navigationItem" title="Contacts" id="KsR-eO-JSv">
                         <barButtonItem key="leftBarButtonItem" title="Profile" id="t3L-yc-I6y">
                             <connections>
-                                <segue destination="731-ha-9m2" kind="show" id="8K2-d8-KJT"/>
+                                <action selector="profileButtonListner:" destination="XTg-Jb-6on" id="Deu-50-hmJ"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="jn4-YN-f2n">
@@ -364,6 +352,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="NYP-by-pLD" kind="show" identifier="profilePageViewSegue" id="YH8-zc-g7L"/>
+                        <segue destination="731-ha-9m2" kind="show" identifier="selfProfileSegue" id="as9-8k-fxo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmT-n4-OPN" userLabel="First Responder" sceneMemberID="firstResponder"/>

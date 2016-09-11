@@ -8,6 +8,7 @@ target 'KesaApplication' do
   # Pods for KesaApplication
   pod 'Firebase'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
   target 'KesaApplicationTests' do
     inherit! :search_paths

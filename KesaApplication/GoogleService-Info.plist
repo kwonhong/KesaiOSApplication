@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1042172198711-trturoq6g2u9vknnkd1f2a3un4lq4edi.apps.googleusercontent.com</string>
+	<string>562648386824-k7r0btrkht7mkba6hk46m0ttbtvv7viu.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1042172198711-trturoq6g2u9vknnkd1f2a3un4lq4edi</string>
+	<string>com.googleusercontent.apps.562648386824-k7r0btrkht7mkba6hk46m0ttbtvv7viu</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAh5o0GWbJBgbPs-4otBaywUBilXXyFWKQ</string>
+	<string>AIzaSyAvQmXRkLOLYCxsAexeNcVKItOhImkYxh8</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1042172198711</string>
+	<string>562648386824</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.kesa.KesaApplication</string>
 	<key>PROJECT_ID</key>
-	<string>project-9118302138325598487</string>
+	<string>emergency-contact-list-app</string>
 	<key>STORAGE_BUCKET</key>
-	<string>project-9118302138325598487.appspot.com</string>
+	<string>emergency-contact-list-app.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1042172198711:ios:79ffdd3683bff46c</string>
+	<string>1:562648386824:ios:79ffdd3683bff46c</string>
 	<key>DATABASE_URL</key>
-	<string>https://project-9118302138325598487.firebaseio.com</string>
+	<string>https://emergency-contact-list-app.firebaseio.com</string>
 </dict>
 </plist>

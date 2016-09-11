@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class selfProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
@@ -22,6 +23,13 @@ class selfProfileViewController: UIViewController, UITableViewDelegate, UITableV
     var detailedTextLabelArray = NSMutableArray()
     var selectedTextLabel = NSString()
     var selectedDetailedTextLabel = NSString()
+    var userID = NSString()
+    var postDict = NSDictionary()
+    
+    
+    func getUserId(uid: NSString) {
+        self.userID = uid
+    }
     
     @IBAction func changePictureListner(sender: AnyObject) {
         imagePicker.allowsEditing = false
@@ -48,6 +56,10 @@ class selfProfileViewController: UIViewController, UITableViewDelegate, UITableV
         else {
             contactInfoButton.on = true
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        reloadInputViews()
     }
     
     override func viewDidLoad() {
@@ -80,6 +92,22 @@ class selfProfileViewController: UIViewController, UITableViewDelegate, UITableV
         contactInformationView.layer.cornerRadius = 10
         topProfileTableView.layer.cornerRadius = 10
         bottomProfileTableView.layer.cornerRadius = 10
+        
+        let ref = FIRDatabase.database().reference()
+        
+        //ref.child("Users").child(self.userID as String).observeEventType(FIRDataEventType.Value, withBlock: { (snapshot) in
+        ref.child("Users").child(self.userID as String).observeSingleEventOfType(.Value, withBlock: {(snapshot) in
+            // Get user value
+            //let username = snapshot.value!["username"] as! String
+            //let user = User.init(username: username)
+            self.postDict = snapshot.value as! [NSString : AnyObject]
+            self.topProfileTableView.reloadData()
+            self.bottomProfileTableView.reloadData()
+            
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         
         
         // Do any additional setup after loading the view.
@@ -125,45 +153,70 @@ class selfProfileViewController: UIViewController, UITableViewDelegate, UITableV
         if (indexPath.row == 0) {
             if (currentTableView == topProfileTableView) {
                 cell.textLabel?.text = "First Name"
-                cell.detailTextLabel?.text = "Max"
+                cell.detailTextLabel?.text = self.postDict.valueForKey("firstName") as? String
             }
             else {
                 cell.textLabel?.text = "Phone Number"
-                cell.detailTextLabel?.text = "6477743186"
+                let test = self.postDict.objectForKey("mobile")
+                var test2: Int
+                if (postDict.count > 0) {
+                    test2 = test as!Int
+                    cell.detailTextLabel?.text = String(test2)
+                }
+                else {
+                    cell.detailTextLabel?.text = ""
+                }
             }
         }
         else if (indexPath.row == 1) {
             if (currentTableView == topProfileTableView) {
                 cell.textLabel?.text = "Last Name"
-                cell.detailTextLabel?.text = "Kim"
+                cell.detailTextLabel?.text = self.postDict.valueForKey("lastName") as? String
             }
             else {
                 cell.textLabel?.text = "E-mail"
-                cell.detailTextLabel?.text = "mik7920@hotmail.com"
+                cell.detailTextLabel?.text = self.postDict.valueForKey("email") as? String
             }
         }
         else if (indexPath.row == 2) {
             if (currentTableView == topProfileTableView) {
                 cell.textLabel?.text = "Program"
-                cell.detailTextLabel?.text = "ECE"
+                cell.detailTextLabel?.text = self.postDict.valueForKey("program") as? String
             }
             else {
                 cell.textLabel?.text = "Contact Method"
-                cell.detailTextLabel?.text = "Phone Call"
+                cell.detailTextLabel?.text = self.postDict.valueForKey("contactMethod") as? String
             }
         }
         else if (indexPath.row == 3) {
             cell.textLabel?.text = "Admission Year"
-            cell.detailTextLabel?.text = "1T7"
+            //cell.detailTextLabel?.text = self.postDict.valueForKey("admissionYear") as? String
+            let test = self.postDict.objectForKey("admissionYear")
+            let temp = self.postDict.objectForKey("admissionYear") as? String
+            var test2: Int
+            if (postDict.count > 0 && temp == nil) {
+                test2 = test as! Int
+                cell.detailTextLabel?.text = String(test2)
+            }
+            else if (postDict.count > 0) {
+                cell.detailTextLabel?.text = temp;
+            }
+            else {
+                cell.detailTextLabel?.text = ""
+            }
             
         }
         if (currentTableView == topProfileTableView) {
             textlabelArray.insertObject((cell.textLabel?.text)!, atIndex: indexPath.row + 3)
-            detailedTextLabelArray.insertObject((cell.detailTextLabel?.text)!, atIndex: indexPath.row + 3)
+            if (postDict.count > 0) {
+                detailedTextLabelArray.insertObject((cell.detailTextLabel?.text)!, atIndex: indexPath.row + 3)
+            }
         }
         else {
             textlabelArray.insertObject((cell.textLabel?.text)!, atIndex: indexPath.row)
-            detailedTextLabelArray.insertObject((cell.detailTextLabel?.text)!, atIndex: indexPath.row)
+            if (postDict.count > 0) {
+                detailedTextLabelArray.insertObject((cell.detailTextLabel?.text)!, atIndex: indexPath.row)
+            }
         }
         
         // Configure the cell...

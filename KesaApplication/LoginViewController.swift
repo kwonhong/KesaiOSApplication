@@ -9,6 +9,8 @@ import UIKit
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     let accountManager:AccountManager = AccountManager()
+    
+    var userID = NSString()
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,9 +50,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             displayAlertMessage("Please enter your password")
         }
         
+        let userInfo = NSUserDefaults.standardUserDefaults()
+        
         let resultHandler = ResultHandler()
         resultHandler.onSuccessCallback = {
             // TODO(jiwoo): Handle authentication success case.
+            self.userID = userInfo.objectForKey("userIdentifier") as! NSString
+            print(self.userID)
+            self.performSegueWithIdentifier("contactListSegue", sender: self)
         }
         resultHandler.onErrorCallback = { error in
             // TODO(jiwoo): Handle authentication error case.
@@ -64,8 +71,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         //Hide Keyboard when login button clicked
         self.userEmailTextField.resignFirstResponder()
         self.userPasswordTextField.resignFirstResponder()
-        let userInfo = NSUserDefaults.standardUserDefaults()
-        userInfo.setObject(self.userEmailTextField.text, forKey:"email")
     }
     
     //Hide Keyboard when background clicked
@@ -89,6 +94,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             
         default:
             break
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if (segue.identifier == "contactListSegue") {
+            let next = segue.destinationViewController as! ContactListViewController
+            next.getUserId(self.userID)
         }
     }
 }
