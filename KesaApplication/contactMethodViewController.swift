@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import Firebase
 
 class contactMethodViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var methodsTableView: UITableView!
     
     var contactMethod = NSString()
+    var userID = NSString()
+    
+    let ref = FIRDatabase.database().reference()
     
     func getCurrentMethod(method: NSString) {
         contactMethod = method
+    }
+    
+    func getUserID(uid: NSString) {
+        self.userID = uid
     }
     
     @IBAction func cancelButtonListner(sender: AnyObject) {
@@ -72,6 +80,8 @@ class contactMethodViewController: UIViewController, UITableViewDelegate, UITabl
     }
     func tableView(currentTableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //upload what they want
+        let options = ["Phone Call", "Katalk", "Text Message", "E-mail"]
+        self.ref.child("Users").child(self.userID as String).child("contactMethod").setValue(options[indexPath.row])
         dismissViewControllerAnimated(true, completion: nil)
     }
     

@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let CLVC = storyboard.instantiateViewControllerWithIdentifier("ContactListViewController")
         let navController = self.window?.rootViewController as! UINavigationController
         
-        if ((userInfo.objectForKey("email")) != nil) {
+        if ((userInfo.objectForKey("userIdentifier")) != nil) {
             navController.setViewControllers([LVC, CLVC], animated:true)
         }
         else {

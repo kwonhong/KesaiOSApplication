@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Firebase
 
 class editViewController: UIViewController, UITextFieldDelegate {
     
     var tempTitle = NSString()
     var tempSubTitle = NSString()
+    var userID = NSString()
+    var myInfo = NSMutableDictionary()
+    
     let accountManager:AccountManager = AccountManager()
+    let ref = FIRDatabase.database().reference()
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleText: UITextField!
@@ -39,6 +44,9 @@ class editViewController: UIViewController, UITextFieldDelegate {
         }
         else {
             //upload to database
+            self.ref.child("Users").child(self.userID as String).child(tempTitle as String).setValue(subTitleText.text)
+            self.myInfo[tempTitle as String] = subTitleText.text
+            dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
@@ -48,6 +56,14 @@ class editViewController: UIViewController, UITextFieldDelegate {
     
     func getSubTitle(subTitle: NSString) {
         tempSubTitle = subTitle as String
+    }
+    
+    func getUserId(uid: NSString) {
+        self.userID = uid
+    }
+    
+    func getMyInfo(info:NSMutableDictionary) {
+        self.myInfo = info
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -71,8 +87,13 @@ class editViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         titleLabel.text = tempTitle as String
         subTitleText.text = tempSubTitle as String
-        
+        subTitleText.placeholder = tempTitle as String
         subTitleText.delegate = self
+        
+        
+        if (tempTitle as String == "Phone Number") {
+            self.subTitleText.keyboardType = .NumberPad
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -83,7 +104,7 @@ class editViewController: UIViewController, UITextFieldDelegate {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -91,6 +112,6 @@ class editViewController: UIViewController, UITextFieldDelegate {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

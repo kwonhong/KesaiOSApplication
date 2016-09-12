@@ -15,16 +15,16 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var firstTableView: UITableView!
     @IBOutlet weak var secondTableView: UITableView!
     
+    var profileInfo = NSDictionary()
+    
+    func getProfileInfo(info: NSDictionary) {
+        self.profileInfo = info
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Additional setup after loading the view.
-        
-//        profilePicture.layer.borderWidth = 1
-//        profilePicture.layer.masksToBounds = false
-//        profilePicture.layer.borderColor = UIColor.blackColor().CGColor
-//        profilePicture.layer.cornerRadius = profilePicture.frame.height/2
-//        profilePicture.clipsToBounds = true
         
         profilePicture.layer.borderColor = UIColor.clearColor().CGColor
         profilePicture.layer.cornerRadius = profilePicture.frame.size.height/2
@@ -45,8 +45,18 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         secondTableView.layer.cornerRadius = 10
         
         
-        let image: UIImage = UIImage(named: "ic_account_circle")!
-        profilePicture.image = image
+        //let image: UIImage = UIImage(named: "ic_account_circle")!
+        //profilePicture.image = image
+        let strBase64 = self.profileInfo.valueForKey("profileImage") as? String
+        if (strBase64 == nil) {
+            let image: UIImage = UIImage(named: "ic_account_circle")!
+            self.profilePicture.image = image
+        }
+        else {
+            let dataDecoded:NSData = NSData(base64EncodedString: strBase64!, options:NSDataBase64DecodingOptions.IgnoreUnknownCharacters)!
+            let decodedimage:UIImage = UIImage(data: dataDecoded)!
+            self.profilePicture.image = decodedimage
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -78,33 +88,52 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         if (indexPath.row == 0) {
             if (currentTableView == firstTableView) {
                 cell.textLabel?.text = "First Name"
-                cell.detailTextLabel?.text = "Joon"
+                cell.detailTextLabel?.text = self.profileInfo.valueForKey("First Name") as? String
             }
             else {
-                cell.textLabel?.text = "Phone Number"
-                cell.detailTextLabel?.text = "6479850414"
+                cell.textLabel?.text = "Mobile"
+                let test = self.profileInfo.objectForKey("Mobile")
+                var test2: Int
+                if (self.profileInfo.count > 0) {
+                    test2 = test as!Int
+                    cell.detailTextLabel?.text = String(test2)
+                }
+                else {
+                    cell.detailTextLabel?.text = ""
+                }
             }
         }
-        
         else if (indexPath.row == 1) {
             if (currentTableView == firstTableView) {
                 cell.textLabel?.text = "Last Name"
-                cell.detailTextLabel?.text = "Lee"
+                cell.detailTextLabel?.text = self.profileInfo.valueForKey("Last Name") as? String
             }
             else {
                 cell.textLabel?.text = "E-mail"
-                cell.detailTextLabel?.text = "juicebox-_-rox@hotmail.com"
+                cell.detailTextLabel?.text = self.profileInfo.valueForKey("E-mail") as? String
             }
         }
-        
         else if (indexPath.row == 2) {
             cell.textLabel?.text = "Program"
-            cell.detailTextLabel?.text = "ECE"
+            cell.detailTextLabel?.text = self.profileInfo.valueForKey("Program") as? String
         }
-        
         else if (indexPath.row == 3) {
             cell.textLabel?.text = "Admission Year"
-            cell.detailTextLabel?.text = "1T8"
+            //cell.detailTextLabel?.text = self.profileInfo.valueForKey("admissionYear") as? String
+            let test = self.profileInfo.objectForKey("Admission Year")
+            let temp = self.profileInfo.objectForKey("Admission Year") as? String
+            var test2: Int
+            if (self.profileInfo.count > 0 && temp == nil) {
+                test2 = test as! Int
+                cell.detailTextLabel?.text = String(test2)
+            }
+            else if (self.profileInfo.count > 0) {
+                cell.detailTextLabel?.text = temp;
+            }
+            else {
+                cell.detailTextLabel?.text = ""
+            }
+            
         }
         
         

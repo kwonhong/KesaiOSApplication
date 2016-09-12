@@ -14,13 +14,16 @@ class ContactListViewController : UITableViewController {
     
     var userID = NSString()
     var postDict = NSDictionary()
-    var contactList = NSDictionary()
+    var contactList = NSMutableDictionary()
+    var myInfo = NSDictionary()
     var rowCount = NSInteger()
     var keys = NSArray()
+    var profileInfo = NSDictionary()
+    var refreshCtrl = UIRefreshControl()
     
     @IBAction func logOutButtonListner(sender: AnyObject) {
         let userInfo = NSUserDefaults.standardUserDefaults()
-        userInfo.setObject(nil, forKey:"email")
+        userInfo.setObject(nil, forKey:"userIdentifier")
         //dismissViewControllerAnimated(true, completion:nil)
         navigationController!.popViewControllerAnimated(true)
     }
@@ -29,10 +32,24 @@ class ContactListViewController : UITableViewController {
         self.performSegueWithIdentifier("selfProfileSegue", sender: self)
     }
     
+    func refresh(sender:AnyObject) {
+        viewDidLoad()
+
+    }
+    
     override func viewDidLoad() {
         let ref = FIRDatabase.database().reference()
         var temp = NSDictionary()
         self.rowCount = 0;
+        
+        self.refreshCtrl.addTarget(self, action: #selector(ContactListViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView?.addSubview(refreshCtrl)
+        
+        if (self.userID == "") {
+            let userInfo = NSUserDefaults.standardUserDefaults()
+            self.userID = userInfo.valueForKey("userIdentifier") as! String
+        }
+        self.refreshCtrl.beginRefreshing()
         
         ref.child("Users").observeSingleEventOfType(.Value, withBlock: {(snapshot) in
             // Get user value
@@ -45,10 +62,10 @@ class ContactListViewController : UITableViewController {
                 temp = self.postDict.objectForKey(key as! String) as! NSDictionary
                 if (key as? NSString != self.userID && isExecutive) {
                     self.rowCount = self.postDict.count - 1
-                    self.contactList = [iter : temp]
+                    self.contactList[iter] = temp
                     iter += 1
                 }
-                else if (key as! String != self.userID as String){
+                else if (key as! String != self.userID as String) {
                     print(temp.objectForKey("contactPublic"))
                     let contactPublic = temp.valueForKey("contactPublic")
                     let isContactPublic = contactPublic as! Bool
@@ -58,8 +75,14 @@ class ContactListViewController : UITableViewController {
                         iter += 1
                     }
                 }
+                else {
+                    self.myInfo = temp
+                }
             }
             self.tableView.reloadData()
+            if (self.refreshCtrl.refreshing) {
+                self.refreshCtrl.endRefreshing()
+            }
             
             // ...
         }) { (error) in
@@ -82,14 +105,14 @@ class ContactListViewController : UITableViewController {
         if (contactList.count > 0) {
             //print(self.contactList.objectForKey(String(indexPath.row)))
             let temp = self.contactList.objectForKey(indexPath.row) as? NSDictionary
-            cell.department.text = temp!.valueForKey("program") as? String
-            let firstName = temp!.valueForKey("firstName") as? String
-            let lastName = temp!.valueForKey("lastName") as? String
+            cell.department.text = temp!.valueForKey("Program") as? String
+            let firstName = temp!.valueForKey("First Name") as? String
+            let lastName = temp!.valueForKey("Last Name") as? String
             let fullName = firstName! + " " + lastName!
             cell.name.text = fullName
         
-            let test = temp!.valueForKey("admissionYear")
-            let test3 = temp!.valueForKey("admissionYear") as? String
+            let test = temp!.valueForKey("Admission Year")
+            let test3 = temp!.valueForKey("Admission Year") as? String
             var test2: Int
             if (postDict.count > 0 && test3 == nil) {
                 test2 = test as! Int
@@ -98,6 +121,10 @@ class ContactListViewController : UITableViewController {
             else if (postDict.count > 0) {
                 cell.year.text = test3
             }
+            let strBase64 = temp!.valueForKey("profileImage") as? String
+            let dataDecoded:NSData = NSData(base64EncodedString: strBase64!,options:NSDataBase64DecodingOptions.IgnoreUnknownCharacters)!
+            let decodedimage:UIImage = UIImage(data: dataDecoded)!
+            cell.thumbnail.image = decodedimage
         }
         
         return cell
@@ -105,6 +132,7 @@ class ContactListViewController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.profileInfo = (self.contactList.objectForKey(indexPath.row) as? NSDictionary)!
         performSegueWithIdentifier("profilePageViewSegue", sender: self)
         //NSLog("Touch Table Row at %d", indexPath.row)
     }
@@ -115,6 +143,11 @@ class ContactListViewController : UITableViewController {
         if (segue.identifier == "selfProfileSegue") {
             let next = segue.destinationViewController as! selfProfileViewController
             next.getUserId(self.userID)
+            next.getMyInfo(self.myInfo)
+        }
+        else if (segue.identifier == "profilePageViewSegue") {
+            let next = segue.destinationViewController as! ProfilePageViewController
+            next.getProfileInfo(self.profileInfo)
         }
     }
 }
