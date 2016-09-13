@@ -62,10 +62,6 @@ class editViewController: UIViewController, UITextFieldDelegate {
         self.userID = uid
     }
     
-    func getMyInfo(info:NSMutableDictionary) {
-        self.myInfo = info
-    }
-    
     func textFieldDidBeginEditing(textField: UITextField) {
         titleLabel.textColor = UIColor.blackColor()
         

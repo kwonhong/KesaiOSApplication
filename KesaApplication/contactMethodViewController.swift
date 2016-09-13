@@ -15,6 +15,7 @@ class contactMethodViewController: UIViewController, UITableViewDelegate, UITabl
     
     var contactMethod = NSString()
     var userID = NSString()
+    var myInfo = NSMutableDictionary()
     
     let ref = FIRDatabase.database().reference()
     
@@ -82,6 +83,7 @@ class contactMethodViewController: UIViewController, UITableViewDelegate, UITabl
         //upload what they want
         let options = ["Phone Call", "Katalk", "Text Message", "E-mail"]
         self.ref.child("Users").child(self.userID as String).child("contactMethod").setValue(options[indexPath.row])
+        self.myInfo["contactMethod"] = options[indexPath.row]
         dismissViewControllerAnimated(true, completion: nil)
     }
     

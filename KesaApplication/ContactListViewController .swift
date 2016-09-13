@@ -15,7 +15,7 @@ class ContactListViewController : UITableViewController {
     var userID = NSString()
     var postDict = NSDictionary()
     var contactList = NSMutableDictionary()
-    var myInfo = NSDictionary()
+    var myInfo = NSMutableDictionary()
     var rowCount = NSInteger()
     var keys = NSArray()
     var profileInfo = NSDictionary()
@@ -44,14 +44,14 @@ class ContactListViewController : UITableViewController {
         
         self.refreshCtrl.addTarget(self, action: #selector(ContactListViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
         self.tableView?.addSubview(refreshCtrl)
+        self.refreshCtrl.beginRefreshing()
         
         if (self.userID == "") {
             let userInfo = NSUserDefaults.standardUserDefaults()
             self.userID = userInfo.valueForKey("userIdentifier") as! String
         }
-        self.refreshCtrl.beginRefreshing()
         
-        ref.child("Users").observeSingleEventOfType(.Value, withBlock: {(snapshot) in
+        ref.child("Users").queryOrderedByChild("First Name").observeSingleEventOfType(.Value, withBlock: {(snapshot) in
             // Get user value
             self.postDict = snapshot.value as! [NSString : [NSString : AnyObject]]
             self.keys = self.postDict.allKeys
@@ -71,12 +71,12 @@ class ContactListViewController : UITableViewController {
                     let isContactPublic = contactPublic as! Bool
                     if (isContactPublic) {
                         self.rowCount += 1
-                        self.contactList = [iter : temp]
+                        self.contactList[iter] = temp
                         iter += 1
                     }
                 }
                 else {
-                    self.myInfo = temp
+                    self.myInfo = NSMutableDictionary(dictionary : temp)
                 }
             }
             self.tableView.reloadData()
@@ -84,10 +84,14 @@ class ContactListViewController : UITableViewController {
                 self.refreshCtrl.endRefreshing()
             }
             
+            
+            
             // ...
         }) { (error) in
             print(error.localizedDescription)
         }
+        
+        
     }
     
     func getUserId(uid: NSString) {
@@ -111,15 +115,15 @@ class ContactListViewController : UITableViewController {
             let fullName = firstName! + " " + lastName!
             cell.name.text = fullName
         
-            let test = temp!.valueForKey("Admission Year")
-            let test3 = temp!.valueForKey("Admission Year") as? String
-            var test2: Int
-            if (postDict.count > 0 && test3 == nil) {
-                test2 = test as! Int
-                cell.year.text = String(test2)
+            let admissionYear = temp!.valueForKey("Admission Year")
+            let admissionYearStr = temp!.valueForKey("Admission Year") as? String
+            var admissionYearInt: Int
+            if (postDict.count > 0 && admissionYearStr == nil) {
+                admissionYearInt = admissionYear as! Int
+                cell.year.text = String(admissionYearInt)
             }
             else if (postDict.count > 0) {
-                cell.year.text = test3
+                cell.year.text = admissionYearStr
             }
             let strBase64 = temp!.valueForKey("profileImage") as? String
             let dataDecoded:NSData = NSData(base64EncodedString: strBase64!,options:NSDataBase64DecodingOptions.IgnoreUnknownCharacters)!
@@ -143,7 +147,8 @@ class ContactListViewController : UITableViewController {
         if (segue.identifier == "selfProfileSegue") {
             let next = segue.destinationViewController as! selfProfileViewController
             next.getUserId(self.userID)
-            next.getMyInfo(self.myInfo)
+            next.myInfo = self.myInfo
+            //next.getMyInfo(self.myInfo)
         }
         else if (segue.identifier == "profilePageViewSegue") {
             let next = segue.destinationViewController as! ProfilePageViewController

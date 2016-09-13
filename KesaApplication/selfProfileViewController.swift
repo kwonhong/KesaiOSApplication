@@ -24,7 +24,6 @@ class selfProfileViewController: UIViewController, UITableViewDelegate, UITableV
     var selectedTextLabel = NSString()
     var selectedDetailedTextLabel = NSString()
     var userID = NSString()
-    var postDict = NSDictionary()
     var myInfo = NSMutableDictionary()
     
     let profilePicture64Str = NSString()
@@ -40,29 +39,32 @@ class selfProfileViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func changePictureListner(sender: AnyObject) {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .PhotoLibrary
+        self.imagePicker.allowsEditing = false
+        self.imagePicker.sourceType = .PhotoLibrary
         
-        presentViewController(imagePicker, animated: true, completion: nil)
+        presentViewController(self.imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func contactInfoButtonListner(sender: AnyObject) {
         let alert = UIAlertController(title: "Contact Sharing", message: "Are you sure? Turning this on will make your contact information visible to anyone. By default, the contact information is only visible to executive members", preferredStyle: UIAlertControllerStyle.Alert)
         
-        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.Default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.Default, handler: {action in self.Continue()}))
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: {action in self.Cancel()}))
         
-        if(contactInfoButton.on == true) {
+        if(self.contactInfoButton.on == true) {
             self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else {
+            self.ref.child("Users").child(self.userID as String).child("contactPublic").setValue(false)
         }
     }
     
     func Cancel() {
-        if (contactInfoButton.on == true) {
-            contactInfoButton.on = false
+        if (self.contactInfoButton.on == true) {
+            self.contactInfoButton.on = false
         }
         else {
-            contactInfoButton.on = true
+            self.contactInfoButton.on = true
         }
     }
     
@@ -127,6 +129,16 @@ class selfProfileViewController: UIViewController, UITableViewDelegate, UITableV
             self.profilePicture.image = decodedimage
         }
         
+        let contactPublic = self.myInfo.valueForKey("contactPublic")
+        let iscontactPublic = contactPublic as! Bool
+        if (iscontactPublic) {
+            self.contactInfoButton.on = true
+        }
+        else {
+            self.contactInfoButton.on = false
+        }
+        
+        
         self.contactInformationView.layer.cornerRadius = 10
         self.topProfileTableView.layer.cornerRadius = 10
         self.bottomProfileTableView.layer.cornerRadius = 10
@@ -187,11 +199,11 @@ class selfProfileViewController: UIViewController, UITableViewDelegate, UITableV
             }
             else {
                 cell.textLabel?.text = "Mobile"
-                let test = self.myInfo.objectForKey("Mobile")
-                var test2: Int
+                let mobile = self.myInfo.objectForKey("Mobile")
+                var mobileInt: Int
                 if (self.myInfo.count > 0) {
-                    test2 = test as!Int
-                    cell.detailTextLabel?.text = String(test2)
+                    mobileInt = mobile as!Int
+                    cell.detailTextLabel?.text = String(mobileInt)
                 }
                 else {
                     cell.detailTextLabel?.text = ""
@@ -221,15 +233,15 @@ class selfProfileViewController: UIViewController, UITableViewDelegate, UITableV
         else if (indexPath.row == 3) {
             cell.textLabel?.text = "Admission Year"
             //cell.detailTextLabel?.text = self.myInfo.valueForKey("admissionYear") as? String
-            let test = self.myInfo.objectForKey("Admission Year")
-            let temp = self.myInfo.objectForKey("Admission Year") as? String
-            var test2: Int
-            if (self.myInfo.count > 0 && temp == nil) {
-                test2 = test as! Int
-                cell.detailTextLabel?.text = String(test2)
+            let admissionYear = self.myInfo.objectForKey("Admission Year")
+            let admissionYearStr = self.myInfo.objectForKey("Admission Year") as? String
+            var admissionYearInt: Int
+            if (self.myInfo.count > 0 && admissionYearStr == nil) {
+                admissionYearInt = admissionYear as! Int
+                cell.detailTextLabel?.text = String(admissionYearInt)
             }
             else if (myInfo.count > 0) {
-                cell.detailTextLabel?.text = temp;
+                cell.detailTextLabel?.text = admissionYearStr;
             }
             else {
                 cell.detailTextLabel?.text = ""
@@ -288,6 +300,7 @@ class selfProfileViewController: UIViewController, UITableViewDelegate, UITableV
             let next = segue.destinationViewController as! contactMethodViewController
             next.getCurrentMethod(self.selectedDetailedTextLabel)
             next.getUserID(self.userID)
+            next.myInfo = self.myInfo
         }
     }
  

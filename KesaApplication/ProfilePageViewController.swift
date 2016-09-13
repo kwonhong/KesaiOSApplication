@@ -92,11 +92,11 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
             }
             else {
                 cell.textLabel?.text = "Mobile"
-                let test = self.profileInfo.objectForKey("Mobile")
-                var test2: Int
+                let mobile = self.profileInfo.objectForKey("Mobile")
+                var mobileInt: Int
                 if (self.profileInfo.count > 0) {
-                    test2 = test as!Int
-                    cell.detailTextLabel?.text = String(test2)
+                    mobileInt = mobile as!Int
+                    cell.detailTextLabel?.text = String(mobileInt)
                 }
                 else {
                     cell.detailTextLabel?.text = ""
@@ -120,15 +120,15 @@ class ProfilePageViewController: UIViewController, UITableViewDelegate, UITableV
         else if (indexPath.row == 3) {
             cell.textLabel?.text = "Admission Year"
             //cell.detailTextLabel?.text = self.profileInfo.valueForKey("admissionYear") as? String
-            let test = self.profileInfo.objectForKey("Admission Year")
-            let temp = self.profileInfo.objectForKey("Admission Year") as? String
-            var test2: Int
-            if (self.profileInfo.count > 0 && temp == nil) {
-                test2 = test as! Int
-                cell.detailTextLabel?.text = String(test2)
+            let admissionYear = self.profileInfo.objectForKey("Admission Year")
+            let admissionYearStr = self.profileInfo.objectForKey("Admission Year") as? String
+            var admissionYearInt: Int
+            if (self.profileInfo.count > 0 && admissionYearStr == nil) {
+                admissionYearInt = admissionYear as! Int
+                cell.detailTextLabel?.text = String(admissionYearInt)
             }
             else if (self.profileInfo.count > 0) {
-                cell.detailTextLabel?.text = temp;
+                cell.detailTextLabel?.text = admissionYearStr;
             }
             else {
                 cell.detailTextLabel?.text = ""
