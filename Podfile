@@ -9,6 +9,7 @@ target 'KesaApplication' do
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'LiquidFloatingActionButton'
 
   target 'KesaApplicationTests' do
     inherit! :search_paths

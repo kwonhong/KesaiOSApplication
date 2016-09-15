@@ -129,16 +129,14 @@
 			isa = PBXGroup;
 			children = (
 				1A811A071CF29CA900B57455 /* GoogleService-Info.plist */,
+				1ADD2B121CDFFEEA00D39295 /* LaunchScreen.xib */,
+				1ADD2B0D1CDFFEEA00D39295 /* Main.storyboard */,
 				1ADD2B091CDFFEEA00D39295 /* AppDelegate.swift */,
 				1ADD2B0B1CDFFEEA00D39295 /* ViewController.swift */,
 				D0A70AEB1D73693700C14AED /* contactMethodViewController.swift */,
 				D0E5303E1D233BED0063D558 /* editViewController.swift */,
 				D0E5303C1D2333370063D558 /* selfProfileViewController.swift */,
 				697A8A1F1D7640BB00C67E4A /* ProfilePageViewController.swift */,
-				1ADD2B0D1CDFFEEA00D39295 /* Main.storyboard */,
-				1ADD2B101CDFFEEA00D39295 /* Images.xcassets */,
-				1ADD2B121CDFFEEA00D39295 /* LaunchScreen.xib */,
-				1ADD2B071CDFFEEA00D39295 /* Supporting Files */,
 				1AB4522B1CF29181000F3443 /* AccountManager.swift */,
 				1A811A051CF2978400B57455 /* ResultHandler.swift */,
 				1A811A091CF7FD6200B57455 /* User.swift */,
@@ -148,6 +146,8 @@
 				69F9B5101D1CD443001EACD2 /* AfterRegisterViewController.swift */,
 				C3480EF01D768D2A00FC926C /* ContactListViewController .swift */,
 				C3480EF21D768D5400FC926C /* ContactCell.swift */,
+				1ADD2B101CDFFEEA00D39295 /* Images.xcassets */,
+				1ADD2B071CDFFEEA00D39295 /* Supporting Files */,
 			);
 			path = KesaApplication;
 			sourceTree = "<group>";
