@@ -77,7 +77,8 @@ class ContactListViewController : UITableViewController {
         let floatingFrame = CGRect(x: self.view.frame.width - 56 - 16, y: self.view.frame.height - 56 - 16, width: 56, height: 56)
         let floatingButton = createButton(floatingFrame, style: .Up)
         
-        if (self.myInfo.valueForKey("orderBy") as! String == "Adimission Year") {
+        print(self.myInfo.valueForKey("orderBy") as! String)
+        if (self.myInfo.valueForKey("orderBy") as! String == "Admission Year") {
             floatingButton.image = UIImage(named: "numberIcon")
         }
         else {
